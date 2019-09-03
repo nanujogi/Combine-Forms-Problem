@@ -20,10 +20,10 @@ struct ContentView : View {
                 Button(action: registrationButtonAction) {
                     Text("Create Account")
                 }
-                .disabled($registrationButtonDisabled.value)
+                .disabled($registrationButtonDisabled.wrappedValue)
                 .onReceive(self.registrationModel.validatedCredentials) { newValidatedCredentials in
                     print("🌼 newValidatedCredentials: \(String(describing: newValidatedCredentials))")
-                    self.$registrationButtonDisabled.value = (newValidatedCredentials == nil)
+                    self.$registrationButtonDisabled.wrappedValue = (newValidatedCredentials == nil)
                 }
             }
             

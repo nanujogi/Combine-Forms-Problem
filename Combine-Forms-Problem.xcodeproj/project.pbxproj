@@ -94,6 +94,8 @@
 			dependencies = (
 			);
 			name = "Combine-Forms-Problem";
+			packageProductDependencies = (
+			);
 			productName = "Combine-Forms-Problem";
 			productReference = 7ED43F2A22FED19B0005F60A /* Combine-Forms-Problem.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +124,8 @@
 				Base,
 			);
 			mainGroup = 7ED43F2122FED19B0005F60A;
+			packageReferences = (
+			);
 			productRefGroup = 7ED43F2B22FED19B0005F60A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

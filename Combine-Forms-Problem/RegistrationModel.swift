@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+//import CombinePrintout
 
 class RegistrationModel : ObservableObject {
     
@@ -63,7 +64,6 @@ class RegistrationModel : ObservableObject {
     
     func usernameAvailable(_ username: String, completion: (Bool) -> Void) {
         let isValidEMailAddress: Bool = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: username)
-        
         completion(isValidEMailAddress)
     }
 }
