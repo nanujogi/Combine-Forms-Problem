@@ -3,15 +3,11 @@ import Combine
 import CryptoKit
 import CoreData
 
-
 struct ContentView : View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
-   // @FetchRequest(fetchRequest: User.alldataFetchRequest()) var blogIdeas: FetchedResults<User>
-    
     @ObservedObject var registrationModel = RegistrationModel()
-    
     
     @State private var registrationButtonDisabled = true
     
@@ -20,7 +16,7 @@ struct ContentView : View {
     @State private var hasheMail: String = ""
     
     var body: some View {
-        TabView {
+        
         Form {
             Section {
                 TextField("Enter your EMail", text: $registrationModel.eMail)
@@ -51,8 +47,8 @@ struct ContentView : View {
                 // First time if running comment below line. Add some email & password
                 // then uncomment & run
 
-                // AllUsers()
-                // MyUsers()
+//                AllUsers()
+//                MyUsers()
                
                 
 //                Text("Email id: \(blogIdeas[0].usremail ?? "")")
@@ -61,10 +57,6 @@ struct ContentView : View {
             }
         } // end of Form
            
-        
-            .tag(0)
-    }
-    
         .navigationBarTitle(Text("Sign Up"))
     }
     

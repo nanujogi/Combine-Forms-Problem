@@ -31,7 +31,6 @@ struct AllUsers: View {
         }
         .font(.headline)
         .animation(.easeInOut)
-        
     }
 }
 
