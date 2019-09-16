@@ -10,21 +10,21 @@ import SwiftUI
 
 struct AllUsers: View {
     
-    @FetchRequest(fetchRequest: User.alldataFetchRequest()) var myblogIdeas: FetchedResults<User>
+    @FetchRequest(fetchRequest: User.alldataFetchRequest()) var allmyusers: FetchedResults<User>
 
     var body: some View {
         
         Section(header: Text("User from CoreData")) {
                 List {
-                    ForEach(self.myblogIdeas) {myblogIdea in
+                    ForEach(self.allmyusers) { myuser in
                         VStack(alignment: .leading) {
-                            Text(myblogIdea.usremail ?? "")
+                            Text(myuser.usremail ?? "")
                                 .font(.headline)
-                            Text(myblogIdea.usrpassword ?? "")
+                            Text(myuser.usrpassword ?? "")
                                 .font(.headline)
-                            Text(myblogIdea.appname ?? "")
+                            Text(myuser.appname ?? "")
                                 .font(.subheadline)
-                            Text(myblogIdea.id ?? "")
+                            Text(myuser.id ?? "")
                         }
                     }
                 }
