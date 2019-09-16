@@ -1,16 +1,26 @@
 import SwiftUI
 import Combine
+import CryptoKit
+import CoreData
+
 
 struct ContentView : View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+   // @FetchRequest(fetchRequest: User.alldataFetchRequest()) var blogIdeas: FetchedResults<User>
+    
     @ObservedObject var registrationModel = RegistrationModel()
+    
     
     @State private var registrationButtonDisabled = true
     
     @State private var validatedEMail: String = ""
     @State private var validatedPassword: String = ""
+    @State private var hasheMail: String = ""
     
     var body: some View {
+        TabView {
         Form {
             Section {
                 TextField("Enter your EMail", text: $registrationModel.eMail)
@@ -22,7 +32,7 @@ struct ContentView : View {
                 }
                 .disabled($registrationButtonDisabled.wrappedValue)
                 .onReceive(self.registrationModel.validatedCredentials) { newValidatedCredentials in
-                    print("🌼 newValidatedCredentials: \(String(describing: newValidatedCredentials))")
+//                    print("🌼 newValidatedCredentials: \(String(describing: newValidatedCredentials))")
                     self.$registrationButtonDisabled.wrappedValue = (newValidatedCredentials == nil)
                 }
             }
@@ -37,12 +47,53 @@ struct ContentView : View {
                     .onReceive(self.registrationModel.validatedPassword) { newValidatedPassword in
                         self.validatedPassword = newValidatedPassword != nil ? newValidatedPassword! : "Passwords to short or don't match"
                 }
+                
+                // First time if running comment below line. Add some email & password
+                // then uncomment & run
+
+                // AllUsers()
+                // MyUsers()
+               
+                
+//                Text("Email id: \(blogIdeas[0].usremail ?? "")")
+//                Text("Password \(blogIdeas[0].usrpassword ?? "")")
+//                Text("App Name \(blogIdeas[0].appname ?? "")")
             }
-        }
+        } // end of Form
+           
+        
+            .tag(0)
+    }
+    
         .navigationBarTitle(Text("Sign Up"))
     }
     
     func registrationButtonAction() {
         print("Create Account Clicked")
+        print("Valid email: \(validatedEMail)")
+        print("Valid password: \(validatedPassword)")
+        
+        if let data = validatedEMail.lowercased().data(using: .utf8) {
+            let hash = SHA256.hash(data: data)
+            hasheMail = hash.description
+            print(hash.description)
+            
+            let user = User(context: self.managedObjectContext)
+            user.usremail = "\(validatedEMail.lowercased())"
+            user.usrpassword = "\(validatedPassword)"
+
+//            user.usrpassword = self.validatedPassword
+            user.id = UUID().uuidString
+            user.appname = "myForm"
+            
+            // user.usrpassword = hash.description
+            
+            do {
+                try self.managedObjectContext.save()
+                print("saved email & password to coredata")
+            } catch let error as NSError {
+                print ("Could not Save \(error), \(error.userInfo)")
+            }
+        }
     }
 }
