@@ -68,14 +68,6 @@ class RegistrationModel : ObservableObject {
     func usernameAvailable(_ username: String, completion: (Bool) -> Void) {
         
         let isValidEMailAddress: Bool = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: username)
-        
-//        if isValidEMailAddress {
-//            if let data = username.lowercased().data(using: .utf8) {
-//                let hash = SHA256.hash(data: data)
-//                hasheMail = hash.description
-//                print(hash.description)
-//            }
-//        }
         completion(isValidEMailAddress)
     }
 }

@@ -12,6 +12,7 @@
 		7E05DF71232BC14B004E250F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05DF70232BC14B004E250F /* CoreDataStack.swift */; };
 		7E05DF75232BCD2C004E250F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05DF74232BCD2C004E250F /* User+CoreDataProperties.swift */; };
 		7E2FC6E5232CB860005D48B4 /* AllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2FC6E4232CB860005D48B4 /* AllUsers.swift */; };
+		7E36A0832330FA310062A508 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E36A0822330FA310062A508 /* FormView.swift */; };
 		7ECC3E5A232F4C79009C89E9 /* MyAllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */; };
 		7ECC3E5C232F5DC9009C89E9 /* MyUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC3E5B232F5DC9009C89E9 /* MyUsers.swift */; };
 		7ED43F2E22FED19B0005F60A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43F2D22FED19B0005F60A /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 		7E05DF70232BC14B004E250F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7E05DF74232BCD2C004E250F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7E2FC6E4232CB860005D48B4 /* AllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsers.swift; sourceTree = "<group>"; };
+		7E36A0822330FA310062A508 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAllUsers.swift; sourceTree = "<group>"; };
 		7ECC3E5B232F5DC9009C89E9 /* MyUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUsers.swift; sourceTree = "<group>"; };
 		7ED43F2A22FED19B0005F60A /* Combine-Forms-Problem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combine-Forms-Problem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 				7E05DF70232BC14B004E250F /* CoreDataStack.swift */,
 				7ED43F2F22FED19B0005F60A /* SceneDelegate.swift */,
 				7ED43F3122FED19B0005F60A /* ContentView.swift */,
+				7E36A0822330FA310062A508 /* FormView.swift */,
 				7ED43F4122FED2020005F60A /* RegistrationModel.swift */,
 				7E2FC6E4232CB860005D48B4 /* AllUsers.swift */,
 				7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */,
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E36A0832330FA310062A508 /* FormView.swift in Sources */,
 				7ED43F2E22FED19B0005F60A /* AppDelegate.swift in Sources */,
 				7E05DF67232BBFD8004E250F /* Formdata.xcdatamodeld in Sources */,
 				7ECC3E5C232F5DC9009C89E9 /* MyUsers.swift in Sources */,

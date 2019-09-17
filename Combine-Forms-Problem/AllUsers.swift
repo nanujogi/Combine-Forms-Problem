@@ -13,8 +13,7 @@ struct AllUsers: View {
     @FetchRequest(fetchRequest: User.alldataFetchRequest()) var allmyusers: FetchedResults<User>
 
     var body: some View {
-        
-        Section(header: Text("User from CoreData")) {
+        //Section(header: Text("User from CoreData")) {
                 List {
                     ForEach(self.allmyusers) { myuser in
                         VStack(alignment: .leading) {
@@ -28,7 +27,7 @@ struct AllUsers: View {
                         }
                     }
                 }
-        }
+        //}
         .font(.headline)
         .animation(.easeInOut)
     }

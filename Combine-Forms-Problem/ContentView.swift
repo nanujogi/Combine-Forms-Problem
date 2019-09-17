@@ -5,87 +5,21 @@ import CoreData
 
 struct ContentView : View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
-    @ObservedObject var registrationModel = RegistrationModel()
-    
-    @State private var registrationButtonDisabled = true
-    
-    @State private var validatedEMail: String = ""
-    @State private var validatedPassword: String = ""
-    @State private var hasheMail: String = ""
-    
     var body: some View {
-        
-        Form {
-            Section {
-                TextField("Enter your EMail", text: $registrationModel.eMail)
-                SecureField("Enter a Password", text: $registrationModel.password)
-                SecureField("Enter the Password again", text: $registrationModel.passwordRepeat)
-                
-                Button(action: registrationButtonAction) {
-                    Text("Create Account")
-                }
-                .disabled($registrationButtonDisabled.wrappedValue)
-                .onReceive(self.registrationModel.validatedCredentials) { newValidatedCredentials in
-//                    print("🌼 newValidatedCredentials: \(String(describing: newValidatedCredentials))")
-                    self.$registrationButtonDisabled.wrappedValue = (newValidatedCredentials == nil)
-                }
+        TabView {
+            FormView()
+                .tabItem {
+                    Image(systemName: "textbox")
+                    Text("Form Input")
             }
-            
-            Section {
-                Text("Validated EMail: \(validatedEMail)")
-                    .onReceive(self.registrationModel.validatedEMail) { newValidatedEMail in
-                        self.validatedEMail = newValidatedEMail != nil ? newValidatedEMail! : "EMail invalid"
-                }
-                
-                Text("Validated Password: \(validatedPassword)")
-                    .onReceive(self.registrationModel.validatedPassword) { newValidatedPassword in
-                        self.validatedPassword = newValidatedPassword != nil ? newValidatedPassword! : "Passwords to short or don't match"
-                }
-                
-                // First time if running comment below line. Add some email & password
-                // then uncomment & run
-
-//                AllUsers()
-//                MyUsers()
-               
-                
-//                Text("Email id: \(blogIdeas[0].usremail ?? "")")
-//                Text("Password \(blogIdeas[0].usrpassword ?? "")")
-//                Text("App Name \(blogIdeas[0].appname ?? "")")
+            .tag(0)
+              
+            AllUsers()
+                .tabItem {
+                Image(systemName: "person.fill")
+                    Text("Show All Users")
             }
-        } // end of Form
-           
-        .navigationBarTitle(Text("Sign Up"))
-    }
-    
-    func registrationButtonAction() {
-        print("Create Account Clicked")
-        print("Valid email: \(validatedEMail)")
-        print("Valid password: \(validatedPassword)")
-        
-        if let data = validatedEMail.lowercased().data(using: .utf8) {
-            let hash = SHA256.hash(data: data)
-            hasheMail = hash.description
-            print(hash.description)
-            
-            let user = User(context: self.managedObjectContext)
-            user.usremail = "\(validatedEMail.lowercased())"
-            user.usrpassword = "\(validatedPassword)"
-
-//            user.usrpassword = self.validatedPassword
-            user.id = UUID().uuidString
-            user.appname = "myForm"
-            
-            // user.usrpassword = hash.description
-            
-            do {
-                try self.managedObjectContext.save()
-                print("saved email & password to coredata")
-            } catch let error as NSError {
-                print ("Could not Save \(error), \(error.userInfo)")
-            }
-        }
+            .tag(1)
+        } // end of TabView
     }
 }
