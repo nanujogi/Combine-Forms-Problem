@@ -8,8 +8,7 @@ https://forums.swift.org/t/crash-in-swiftui-app-using-combine-was-using-publishe
 
 <p>Successfully adding email & pass to coredata
 <p>Successfully loading all email & pass from coredata
-  <p> To see all user's data uncomment the line AllUsers() to see all your users data.
-    <p><b>Note: Remember to add some users before you uncomment AllUsers() else it will crash for sure.
+<p>Successfully loading single user details from coredata.
 
 ## TODO:
 <p>Check if email already present before adding to coredata.
