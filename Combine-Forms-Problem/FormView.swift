@@ -48,17 +48,6 @@ struct FormView: View {
                     .onReceive(self.registrationModel.validatedPassword) { newValidatedPassword in
                         self.validatedPassword = newValidatedPassword != nil ? newValidatedPassword! : "Passwords to short or don't match"
                 }
-                
-                // First time if running comment below line. Add some email & password
-                // then uncomment & run
-                
-                //                AllUsers()
-                //                MyUsers()
-                
-                
-                //                Text("Email id: \(blogIdeas[0].usremail ?? "")")
-                //                Text("Password \(blogIdeas[0].usrpassword ?? "")")
-                //                Text("App Name \(blogIdeas[0].appname ?? "")")
             }
         } // end of Form
         

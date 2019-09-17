@@ -24,6 +24,7 @@ struct AllUsers: View {
                             Text(myuser.appname ?? "")
                                 .font(.subheadline)
                             Text(myuser.id ?? "")
+                                .font(.system(.caption))
                         }
                     }
                 }

@@ -14,7 +14,7 @@ struct MyUsers: View {
     @ObservedObject var store = MyAllUsers()
     
     var body: some View {
-        Section(header: Text("My Code")) {
+        //Section(header: Text("My Code")) {
             List(store.pubUsers) { myusr in
                 //ForEach(self.store.pubUsers) { myusr in
                     VStack(alignment: .leading) {
@@ -25,12 +25,13 @@ struct MyUsers: View {
                         Text(myusr.appname ?? "")
                             .font(.subheadline)
                         Text(myusr.id ?? "")
+                            .font(.system(.caption))
                     }
                 //}
             }
             .foregroundColor(Color.pink)
             .animation(.easeInOut)
-        }
+        //}
         .onAppear(perform: { self.store.populateSpecificUser() })
     }
 }

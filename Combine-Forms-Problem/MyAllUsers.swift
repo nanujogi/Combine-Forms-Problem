@@ -15,7 +15,7 @@ class MyAllUsers: ObservableObject {
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).coreDataStack.managedContext
     
     lazy var specificuserPredicate: NSPredicate = {
-        return NSPredicate(format: "%K == %@", #keyPath(User.usremail), "nanu.jogi@gmail.com")
+        return NSPredicate(format: "%K == %@", #keyPath(User.usremail), "nanu@grenleaf.com")
     }()
     
     @Published var pubUsers = [User]()
