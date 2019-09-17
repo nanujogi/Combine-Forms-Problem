@@ -30,7 +30,7 @@ class MyAllUsers: ObservableObject {
         
         do {
             let myusers = try  managedObjectContext.fetch(fetchRequest)
-            print(myusers)
+//            print(myusers)
             pubUsers = myusers
         } catch let error as NSError {
             print ("Could not fetch \(error), \(error.userInfo)")

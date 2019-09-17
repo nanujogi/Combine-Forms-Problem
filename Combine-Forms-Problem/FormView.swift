@@ -20,6 +20,15 @@ struct FormView: View {
     @State private var validatedEMail: String = ""
     @State private var validatedPassword: String = ""
     @State private var hasheMail: String = ""
+    
+    // Alert
+    struct Message: Identifiable {
+//        var id: ObjectIdentifier
+        var id = UUID()
+        let msgText: String
+    }
+    @State private var message: Message? = nil
+    
     var body: some View {
         
         Form {
@@ -31,6 +40,10 @@ struct FormView: View {
                 Button(action: registrationButtonAction) {
                     Text("Create Account")
                 }
+                .alert(item: $message) { (message) -> Alert in
+                    Alert(title: Text(message.msgText), message: nil, dismissButton: .default(Text("OK!")))
+                }
+                    
                 .disabled($registrationButtonDisabled.wrappedValue)
                 .onReceive(self.registrationModel.validatedCredentials) { newValidatedCredentials in
                     //                    print("🌼 newValidatedCredentials: \(String(describing: newValidatedCredentials))")
@@ -54,14 +67,15 @@ struct FormView: View {
     }
     
     func registrationButtonAction() {
-        print("Create Account Clicked")
-        print("Valid email: \(validatedEMail)")
-        print("Valid password: \(validatedPassword)")
+        self.message = Message(msgText: "Successfully added to CoreData")
+//        print("Create Account Clicked")
+//        print("Valid email: \(validatedEMail)")
+//        print("Valid password: \(validatedPassword)")
         
         if let data = validatedEMail.lowercased().data(using: .utf8) {
             let hash = SHA256.hash(data: data)
             hasheMail = hash.description
-            print(hash.description)
+//            print(hash.description)
             
             let user = User(context: self.managedObjectContext)
             user.usremail = "\(validatedEMail.lowercased())"
