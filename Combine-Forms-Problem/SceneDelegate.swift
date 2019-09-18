@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let contentView = ContentView()
                 .environment(\.managedObjectContext, managedObjectContext)
+                .environment(\.colorScheme, .light)
             
             window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window

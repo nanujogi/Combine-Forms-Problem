@@ -15,7 +15,7 @@ struct FormView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @ObservedObject var registrationModel = RegistrationModel()
-
+    
     @State private var registrationButtonDisabled = true
     @State private var validatedEMail: String = ""
     @State private var validatedPassword: String = ""
@@ -23,7 +23,6 @@ struct FormView: View {
     
     // Alert
     struct Message: Identifiable {
-//        var id: ObjectIdentifier
         var id = UUID()
         let msgText: String
     }
@@ -39,9 +38,11 @@ struct FormView: View {
                 
                 Button(action: registrationButtonAction) {
                     Text("Create Account")
+
                 }
                 .alert(item: $message) { (message) -> Alert in
-                    Alert(title: Text(message.msgText), message: nil, dismissButton: .default(Text("OK!")))
+                    
+                    Alert(title: Text(message.msgText), message: Text("Hello"), dismissButton: .default(Text("OK!")))
                 }
                     
                 .disabled($registrationButtonDisabled.wrappedValue)
@@ -63,19 +64,17 @@ struct FormView: View {
                 }
             }
         } // end of Form
-        
     }
     
     func registrationButtonAction() {
-        self.message = Message(msgText: "Successfully added to CoreData")
-//        print("Create Account Clicked")
-//        print("Valid email: \(validatedEMail)")
-//        print("Valid password: \(validatedPassword)")
+        //        print("Create Account Clicked")
+        //        print("Valid email: \(validatedEMail)")
+        //        print("Valid password: \(validatedPassword)")
         
         if let data = validatedEMail.lowercased().data(using: .utf8) {
             let hash = SHA256.hash(data: data)
             hasheMail = hash.description
-//            print(hash.description)
+            //            print(hash.description)
             
             let user = User(context: self.managedObjectContext)
             user.usremail = "\(validatedEMail.lowercased())"
@@ -89,7 +88,8 @@ struct FormView: View {
             
             do {
                 try self.managedObjectContext.save()
-                print("saved email & password to coredata")
+                self.message = Message(msgText: "Successfully added to CoreData")
+                //                print("saved email & password to coredata")
             } catch let error as NSError {
                 print ("Could not Save \(error), \(error.userInfo)")
             }
