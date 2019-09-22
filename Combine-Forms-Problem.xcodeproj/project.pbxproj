@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E05DF67232BBFD8004E250F /* Formdata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E05DF65232BBFD8004E250F /* Formdata.xcdatamodeld */; };
 		7E05DF6E232BC070004E250F /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05DF6C232BC070004E250F /* User+CoreDataClass.swift */; };
 		7E05DF71232BC14B004E250F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05DF70232BC14B004E250F /* CoreDataStack.swift */; };
 		7E05DF75232BCD2C004E250F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05DF74232BCD2C004E250F /* User+CoreDataProperties.swift */; };
+		7E1EF7F3233756A200916497 /* Formdata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E1EF7F1233756A200916497 /* Formdata.xcdatamodeld */; };
 		7E2FC6E5232CB860005D48B4 /* AllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2FC6E4232CB860005D48B4 /* AllUsers.swift */; };
 		7E36A0832330FA310062A508 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E36A0822330FA310062A508 /* FormView.swift */; };
 		7ECC3E5A232F4C79009C89E9 /* MyAllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */; };
@@ -39,10 +39,10 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		7E05DF66232BBFD8004E250F /* Formdata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formdata.xcdatamodel; sourceTree = "<group>"; };
 		7E05DF6C232BC070004E250F /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7E05DF70232BC14B004E250F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7E05DF74232BCD2C004E250F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E1EF7F2233756A200916497 /* Formdata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formdata.xcdatamodel; sourceTree = "<group>"; };
 		7E2FC6E4232CB860005D48B4 /* AllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsers.swift; sourceTree = "<group>"; };
 		7E36A0822330FA310062A508 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAllUsers.swift; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 				7ED43F3822FED1A70005F60A /* LaunchScreen.storyboard */,
 				7ED43F3B22FED1A70005F60A /* Info.plist */,
 				7ED43F3522FED1A70005F60A /* Preview Content */,
-				7E05DF65232BBFD8004E250F /* Formdata.xcdatamodeld */,
 			);
 			path = "Combine-Forms-Problem";
 			sourceTree = "<group>";
@@ -112,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				7ED43F3622FED1A70005F60A /* Preview Assets.xcassets */,
+				7E1EF7F1233756A200916497 /* Formdata.xcdatamodeld */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -194,7 +194,6 @@
 			files = (
 				7E36A0832330FA310062A508 /* FormView.swift in Sources */,
 				7ED43F2E22FED19B0005F60A /* AppDelegate.swift in Sources */,
-				7E05DF67232BBFD8004E250F /* Formdata.xcdatamodeld in Sources */,
 				7ECC3E5C232F5DC9009C89E9 /* MyUsers.swift in Sources */,
 				7E05DF75232BCD2C004E250F /* User+CoreDataProperties.swift in Sources */,
 				7ED43F3022FED19B0005F60A /* SceneDelegate.swift in Sources */,
@@ -204,6 +203,7 @@
 				7E05DF6E232BC070004E250F /* User+CoreDataClass.swift in Sources */,
 				7ED43F3222FED19B0005F60A /* ContentView.swift in Sources */,
 				7E05DF71232BC14B004E250F /* CoreDataStack.swift in Sources */,
+				7E1EF7F3233756A200916497 /* Formdata.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,12 +399,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7E05DF65232BBFD8004E250F /* Formdata.xcdatamodeld */ = {
+		7E1EF7F1233756A200916497 /* Formdata.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7E05DF66232BBFD8004E250F /* Formdata.xcdatamodel */,
+				7E1EF7F2233756A200916497 /* Formdata.xcdatamodel */,
 			);
-			currentVersion = 7E05DF66232BBFD8004E250F /* Formdata.xcdatamodel */;
+			currentVersion = 7E1EF7F2233756A200916497 /* Formdata.xcdatamodel */;
 			path = Formdata.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

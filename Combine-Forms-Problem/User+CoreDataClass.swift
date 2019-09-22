@@ -16,6 +16,7 @@ public class User: NSManagedObject, Identifiable {
     @NSManaged public var usrpassword: String?
     @NSManaged public var appname: String?
     @NSManaged public var id: String?
+    @NSManaged public var date: Date
     
 }
 

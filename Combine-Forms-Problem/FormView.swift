@@ -33,6 +33,8 @@ struct FormView: View {
         Form {
             Section {
                 TextField("Enter your EMail", text: $registrationModel.eMail)
+                    .keyboardType(.twitter)
+
                 SecureField("Enter a Password", text: $registrationModel.password)
                 SecureField("Enter the Password again", text: $registrationModel.passwordRepeat)
                 
@@ -42,7 +44,7 @@ struct FormView: View {
                 }
                 .alert(item: $message) { (message) -> Alert in
                     
-                    Alert(title: Text(message.msgText), message: Text("Hello"), dismissButton: .default(Text("OK!")))
+                    Alert(title: Text(message.msgText), message: nil, dismissButton: .default(Text("OK!")))
                 }
                     
                 .disabled($registrationButtonDisabled.wrappedValue)
@@ -83,16 +85,27 @@ struct FormView: View {
             //  user.usrpassword = self.validatedPassword
             user.id = UUID().uuidString
             user.appname = "myForm"
+            user.date = Date()
+            
             
             // user.usrpassword = hash.description
             
             do {
                 try self.managedObjectContext.save()
                 self.message = Message(msgText: "Successfully added to CoreData")
+                
+
+                $registrationModel.passwordRepeat.wrappedValue = ""
+                $registrationModel.password.wrappedValue = ""
+                $registrationModel.eMail.wrappedValue = ""
                 //                print("saved email & password to coredata")
+
             } catch let error as NSError {
                 print ("Could not Save \(error), \(error.userInfo)")
             }
+
+
+
         }
     }
 }

@@ -27,6 +27,8 @@ struct AllUsers: View {
                             .font(.subheadline)
                         Text(myuser.id ?? "")
                             .font(.system(.caption))
+                        Text("\(myuser.date)")
+                            .font(.system(.caption))
                     }
                 }
                 .onDelete(perform: removeUser)
@@ -37,7 +39,6 @@ struct AllUsers: View {
                 .navigationBarTitle("Users")
                 .navigationBarItems(trailing: EditButton())
         }
-        
     }
     
     func removeUser(at offsets: IndexSet) {
@@ -52,8 +53,6 @@ struct AllUsers: View {
         } catch let error as NSError {
             print ("Delete User while saving Could not save \(error), \(error.userInfo)")
         }
-        
     }
-    
 }
 

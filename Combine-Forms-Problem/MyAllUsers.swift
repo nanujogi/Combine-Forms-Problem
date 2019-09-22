@@ -27,6 +27,7 @@ class MyAllUsers: ObservableObject {
 //        let fetchRequest: NSFetchRequest<User> = User.fetchRequest() as! NSFetchRequest<User>
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
          fetchRequest.predicate = specificuserPredicate
+//        fetchRequest.fetchLimit = 1
         
         do {
             let myusers = try  managedObjectContext.fetch(fetchRequest)

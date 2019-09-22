@@ -26,6 +26,8 @@ struct MyUsers: View {
                             .font(.subheadline)
                         Text(myusr.id ?? "")
                             .font(.system(.caption))
+                        Text("\(myusr.date)")
+                            .font(.system(.caption))
                     }
                 //}
             }
