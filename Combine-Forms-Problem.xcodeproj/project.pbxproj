@@ -13,8 +13,8 @@
 		7E1EF7F3233756A200916497 /* Formdata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E1EF7F1233756A200916497 /* Formdata.xcdatamodeld */; };
 		7E2FC6E5232CB860005D48B4 /* AllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2FC6E4232CB860005D48B4 /* AllUsers.swift */; };
 		7E36A0832330FA310062A508 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E36A0822330FA310062A508 /* FormView.swift */; };
-		7ECC3E5A232F4C79009C89E9 /* MyAllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */; };
-		7ECC3E5C232F5DC9009C89E9 /* MyUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC3E5B232F5DC9009C89E9 /* MyUsers.swift */; };
+		7ECC3E5A232F4C79009C89E9 /* SingleUserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC3E59232F4C79009C89E9 /* SingleUserSearch.swift */; };
+		7ECC3E5C232F5DC9009C89E9 /* SingleUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC3E5B232F5DC9009C89E9 /* SingleUserView.swift */; };
 		7ED43F2E22FED19B0005F60A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43F2D22FED19B0005F60A /* AppDelegate.swift */; };
 		7ED43F3022FED19B0005F60A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43F2F22FED19B0005F60A /* SceneDelegate.swift */; };
 		7ED43F3222FED19B0005F60A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED43F3122FED19B0005F60A /* ContentView.swift */; };
@@ -45,8 +45,8 @@
 		7E1EF7F2233756A200916497 /* Formdata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Formdata.xcdatamodel; sourceTree = "<group>"; };
 		7E2FC6E4232CB860005D48B4 /* AllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsers.swift; sourceTree = "<group>"; };
 		7E36A0822330FA310062A508 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
-		7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAllUsers.swift; sourceTree = "<group>"; };
-		7ECC3E5B232F5DC9009C89E9 /* MyUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUsers.swift; sourceTree = "<group>"; };
+		7ECC3E59232F4C79009C89E9 /* SingleUserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserSearch.swift; sourceTree = "<group>"; };
+		7ECC3E5B232F5DC9009C89E9 /* SingleUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserView.swift; sourceTree = "<group>"; };
 		7ED43F2A22FED19B0005F60A /* Combine-Forms-Problem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combine-Forms-Problem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED43F2D22FED19B0005F60A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ED43F2F22FED19B0005F60A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 				7E36A0822330FA310062A508 /* FormView.swift */,
 				7ED43F4122FED2020005F60A /* RegistrationModel.swift */,
 				7E2FC6E4232CB860005D48B4 /* AllUsers.swift */,
-				7ECC3E59232F4C79009C89E9 /* MyAllUsers.swift */,
-				7ECC3E5B232F5DC9009C89E9 /* MyUsers.swift */,
+				7ECC3E59232F4C79009C89E9 /* SingleUserSearch.swift */,
+				7ECC3E5B232F5DC9009C89E9 /* SingleUserView.swift */,
 				7ED43F3322FED1A70005F60A /* Assets.xcassets */,
 				7ED43F3822FED1A70005F60A /* LaunchScreen.storyboard */,
 				7ED43F3B22FED1A70005F60A /* Info.plist */,
@@ -194,10 +194,10 @@
 			files = (
 				7E36A0832330FA310062A508 /* FormView.swift in Sources */,
 				7ED43F2E22FED19B0005F60A /* AppDelegate.swift in Sources */,
-				7ECC3E5C232F5DC9009C89E9 /* MyUsers.swift in Sources */,
+				7ECC3E5C232F5DC9009C89E9 /* SingleUserView.swift in Sources */,
 				7E05DF75232BCD2C004E250F /* User+CoreDataProperties.swift in Sources */,
 				7ED43F3022FED19B0005F60A /* SceneDelegate.swift in Sources */,
-				7ECC3E5A232F4C79009C89E9 /* MyAllUsers.swift in Sources */,
+				7ECC3E5A232F4C79009C89E9 /* SingleUserSearch.swift in Sources */,
 				7E2FC6E5232CB860005D48B4 /* AllUsers.swift in Sources */,
 				7ED43F4222FED2020005F60A /* RegistrationModel.swift in Sources */,
 				7E05DF6E232BC070004E250F /* User+CoreDataClass.swift in Sources */,

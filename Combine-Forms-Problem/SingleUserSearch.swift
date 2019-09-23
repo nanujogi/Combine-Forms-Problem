@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import CoreData
 
-class MyAllUsers: ObservableObject {
+class SingleUserSearch: ObservableObject {
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).coreDataStack.managedContext
     
@@ -19,6 +19,8 @@ class MyAllUsers: ObservableObject {
     }()
     
     @Published var pubUsers = [User]()
+    @Published var mystrdate = ""
+    @Published var userfound: Bool = false
     
     var myusers: [User] = []
     
@@ -32,9 +34,27 @@ class MyAllUsers: ObservableObject {
         do {
             let myusers = try  managedObjectContext.fetch(fetchRequest)
 //            print(myusers)
-            pubUsers = myusers
+            if myusers.count > 0 {
+                mystrdate = sdate(dtsent: myusers[0].date)
+                pubUsers = myusers
+                userfound = true
+            }
+            else {
+                userfound = false
+                print("Error could not fetch user")
+            }
+
         } catch let error as NSError {
             print ("Could not fetch \(error), \(error.userInfo)")
         }
     }
+    
+    func sdate(dtsent: Date) -> String {
+            let myFormatter = DateFormatter()
+    //        myFormatter.dateStyle = .short
+            myFormatter.dateFormat = "dd-MM-yyyy"
+            let newDate1 = myFormatter.string(from: dtsent)
+            return newDate1
+            
+        }
 }

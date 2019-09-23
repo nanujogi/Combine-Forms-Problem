@@ -11,6 +11,7 @@ import SwiftUI
 struct AllUsers: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
+    
     @FetchRequest(fetchRequest: User.alldataFetchRequest()) var allmyusers: FetchedResults<User>
     
     var body: some View {

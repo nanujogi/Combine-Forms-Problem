@@ -21,7 +21,7 @@ struct ContentView : View {
             }
             .tag(1)
             
-            MyUsers()
+            SingleUserView()
                 .tabItem {
                 Image(systemName: "person.fill")
                     Text("Single User")
