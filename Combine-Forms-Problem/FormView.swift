@@ -87,13 +87,11 @@ struct FormView: View {
             user.appname = "myForm"
             user.date = Date()
            
-            
             // user.usrpassword = hash.description
             
             do {
                 try self.managedObjectContext.save()
-                self.message = Message(msgText: "Successfully added to CoreData")
-                
+                self.message = Message(msgText: "Successfully added \(validatedEMail.lowercased()) to CoreData")
 
                 $registrationModel.passwordRepeat.wrappedValue = ""
                 $registrationModel.password.wrappedValue = ""

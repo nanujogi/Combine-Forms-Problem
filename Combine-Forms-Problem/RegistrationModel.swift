@@ -58,7 +58,6 @@ class RegistrationModel : ObservableObject {
 //                print("validatedEMail: \(validatedEMail ?? "not set"), validatedPassword: \(validatedPassword ?? "not set")")
                 
                 guard let eMail = validatedEMail, let password = validatedPassword else { return nil }
-                
                 return (eMail, password)
                 
         }
